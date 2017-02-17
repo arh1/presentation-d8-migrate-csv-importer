@@ -1,4 +1,4 @@
-## Initial Importer Config
+### Initial Importer Config
 
 <pre><code data-trim data-noescape>
 id: my_importer
