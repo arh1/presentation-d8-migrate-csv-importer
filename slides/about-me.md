@@ -2,12 +2,10 @@
 
 [@andyhieb](http://twitter.com/andyhieb)
 
-[Forum One](http://forumone.com)
+![Forum One](slides/img/ForumOne_RGB_Wordmark.png)
+
+<http://forumone.com>
 
 ~Notes:
 
-*   Note here...
-
-*   Another note...
-
-*   Another note...
+* Forum One is a digital agency that partners with influential organizations to craft solutions for the world’s most pressing problems.
