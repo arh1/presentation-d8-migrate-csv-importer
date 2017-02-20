@@ -1,10 +1,12 @@
 ### Migration Config
 
+config/migrate_plus.migration.my_migration.yml
+
 <pre><code data-trim data-noescape>
 id: my_migration
 label: Migrate articles
 migration_groups:
-  - ACME migration
+  - My migration group
 source:
   plugin: my_other_db
 process:
@@ -20,17 +22,19 @@ destination:
 
 ### Importer Config
 
+config/migrate_plus.migration.my_importer.yml
+
 <pre><code data-trim data-noescape>
 id: my_importer
 label: Import articles
 migration_groups:
-  - ACME import
-source:<mark>
+  - My migration group
+source:
   plugin: csv
-  path: '/path/to/file/acme_articles.csv'
-  header_row_count: 1</mark>
+  path: '/path/to/file/my_articles.csv'
+  header_row_count: 1
   keys:
-    - Id2
+    - ID
 process:
   title: title
   body: body
