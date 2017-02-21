@@ -3,12 +3,6 @@
 config/migrate_plus.migration.my_importer.yml
 
 <pre><code data-trim data-noescape>
-id: my_migration
-label: Migrate articles
-migration_groups:
-  - My migration group
-source:
-  plugin: my_other_db
 process:
   title: title
   body: body
@@ -18,8 +12,6 @@ process:
   type:
     plugin: default_value
     default_value: article
-destination:
-  plugin: entity:node
 </code></pre>
 
 ~Notes:
@@ -29,7 +21,7 @@ destination:
 
 ### Derive Node ID from Title String
 
-modules/custom/my_module/src/Plugin/migrate/source/lookup.php
+modules/custom/my_module/src/Plugin/migrate/process/lookup.php
 
 <pre><code class="php" data-trim data-noescape>
 namespace Drupal\my_module\Plugin\migrate\process;

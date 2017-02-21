@@ -31,7 +31,7 @@ migration_groups:
   - My migration group
 source:
   plugin: csv
-  path: '/path/to/file/my_articles.csv'
+  path: '/path/to/my_articles.csv'
   header_row_count: 1
   keys:
     - ID

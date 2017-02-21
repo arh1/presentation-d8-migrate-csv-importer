@@ -3,12 +3,6 @@
 config/migrate_plus.migration.my_importer.yml
 
 <pre><code data-trim data-noescape>
-id: my_migration
-label: Migrate articles
-migration_groups:
-  - My migration group
-source:
-  plugin: my_other_db
 process:
   title: title
   body: body
@@ -18,17 +12,15 @@ process:
   type:
     plugin: default_value
     default_value: article
-destination:
-  plugin: entity:node
 </code></pre>
 
 
 ### Normalize Country Name
 
-modules/custom/my_module/src/Plugin/migrate/source/normalize.php
+modules/custom/my_module/src/Plugin/migrate/process/normalize.php
 
 <pre><code class="php" data-trim data-noescape>
-namespace Drupal\gcar_editors\Plugin\migrate\process;
+namespace Drupal\my_module\Plugin\migrate\process;
 
 use Drupal\migrate\MigrateException;
 use Drupal\migrate\MigrateExecutableInterface;
@@ -42,6 +34,7 @@ use Drupal\Core\Locale\CountryManager;
  * )
  */
 class countryNormalization extends ProcessPluginBase {
+...
 }
 </code></pre>
 
