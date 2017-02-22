@@ -14,6 +14,10 @@ process:
     default_value: article
 </code></pre>
 
+~Notes:
+
+* Note nested key for addressfield (our field name is 'location')
+
 
 ### Normalize Country Name
 

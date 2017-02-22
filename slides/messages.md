@@ -1,8 +1,8 @@
 ### Migration Messages
 
-* migrate_message_my_importer
-* /admin/structure/migrate/manage/my_migration_group/migrations
+* db: migrate_message_my_importer
+* UI: Structure -> Migrations
 
 ~Notes:
 
-* 
+*

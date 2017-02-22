@@ -8,7 +8,8 @@ label: Migrate articles
 migration_groups:
   - My migration group
 source:
-  plugin: my_other_db
+  plugin: d6_node
+  node_type: article
 process:
   title: title
   body: body
@@ -18,6 +19,14 @@ process:
 destination:
   plugin: entity:node
 </code></pre>
+
+~Notes:
+
+* All migration config can be tracked by core CM (or Features)
+* For simple migrations, you'll just need the config/yml and no custom code
+* Here's a simple migration of articles from a D6 to D8 site
+* Source is nodes from a D6 db (node_type is optional config)
+* Destination is nodes on target D8 site
 
 
 ### Importer Config
@@ -47,4 +56,6 @@ destination:
 
 ~Notes:
 
-* Configuration for our migrations -- whether from core, contributed, or our custom modules -- can of course be captured and tracked using D8 core's configuration management system. Just adapting quickly from the Migrate Source CSV docs as a starting point, our initial migration configuration using a csv source might look like this:
+* Here's how our migration config looks for the importer
+* Main change here is our source plugin
+* This plugin does require add'l config

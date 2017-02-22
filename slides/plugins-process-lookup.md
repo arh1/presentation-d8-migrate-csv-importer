@@ -63,7 +63,7 @@ public function transform($value, MigrateExecutableInterface $migrate_executable
     ->execute();
 
   if (!empty($result)) {
-    return array_shift($result);
+    return $result[0];
   }
   else {
     throw new MigrateException(sprintf('Failed to lookup by Title, field name: %s.', $destination_property));

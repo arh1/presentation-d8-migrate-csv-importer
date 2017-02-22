@@ -1,12 +1,19 @@
 ### _migration_ Core Plugin
 
-* Maintain relationships between migrated data
-* Value for _migration_ key should be the other migration run previously
-* That migration should be a dependency of this one
-* Value for _source_ key ...
-* <https://www.drupal.org/docs/8/api/migrate-api/migrate-process/process-plugin-migration>
+Maintain relationships across migrations
+
+<pre><code data-trim data-noescape>
+process:
+  my_field:
+    plugin: migration
+    migration: my_previous_migration
+    source: 'My Field Title'
+</code></pre>
+
 
 ~Notes:
 
-* Confusing at first, but important
-*
+* Maintain relationships across multiple migrations
+* migration = ID of previous migration
+* source = look this up from my_previous_migration mapping to populate value of my_field
+* Previous migration should be a dependency of this one

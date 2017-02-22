@@ -1,9 +1,9 @@
 ### Migration Status
 
-* drush ms
-* console migrate:debug
-* /admin/structure/migrate/manage/my_migration_group/migrations
+* _drush ms_
+* _console migrate:debug_
+* UI: Structure -> Migrations
 
 ~Notes:
 
-*
+* UI = drush ms output w/ links to messages
