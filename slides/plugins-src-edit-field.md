@@ -4,8 +4,8 @@ modules/custom/my_module/src/Plugin/migrate/source/altered.php
 
 <pre><code data-trim data-noescape>
 public function alterMyField($value) {
-  $cleaned = str_replace(['_'], [' '], $value);
-  return $cleaned;
+  $altered = str_replace('_', ' ', $value);
+  return $altered;
 }
 
 public function prepareRow(Row $row) {
@@ -22,6 +22,5 @@ public function prepareRow(Row $row) {
 ~Notes:
 
 * Same steps to create plugin
-* Don't need to override initializeIterator here, just need prepareRow method
-* Override prepareRow method from SourcePluginBase class (which CSV class extends)
-* Add source property and return parent's implementation
+* Don't need to override initializeIterator here (not adding cols), just need prepareRow method
+* Alter existing field and return parent's implementation

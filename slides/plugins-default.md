@@ -3,7 +3,7 @@
 * Lots out of the box
 * <em>default_value</em>, _concat_, <em>machine_name</em>, _callback_, ...
 * Some contrib module plugins
-* _drupal plugin:debug migrate.[process|source|destination]_
+* _console plugin:debug migrate.[process|source|destination]_
 
 ~Notes:
 

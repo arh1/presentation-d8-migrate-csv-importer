@@ -45,13 +45,7 @@ source:
   keys:
     - ID
 process:
-  title: title
-  body: body
-  type:
-    plugin: default_value
-    default_value: article
-destination:
-  plugin: entity:node
+[...]
 </code></pre>
 
 ~Notes:

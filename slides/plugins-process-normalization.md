@@ -6,7 +6,7 @@ config/migrate_plus.migration.my_importer.yml
 process:
   title: title
   body: body
-  location/country_code:
+  my_address_field/country_code:
     plugin: country_normalization
     source: 'Country Name'
   type:
@@ -16,7 +16,7 @@ process:
 
 ~Notes:
 
-* Note nested key for addressfield (our field name is 'location')
+* Note nested key for addressfield (our field name is 'my_address_field')
 
 
 ### Normalize Country Name
@@ -38,18 +38,19 @@ use Drupal\Core\Locale\CountryManager;
  * )
  */
 class countryNormalization extends ProcessPluginBase {
-...
 }
 </code></pre>
 
 ~Notes:
 
-*
+* Again, note id from annotation...
+* And extending ProcessPluginBase
+* Include CountryManager class
 
 
 ### Normalize Country Name
 
-modules/custom/my_module/src/Plugin/migrate/source/normalize.php
+Define alternate country names
 
 <pre><code class="php" data-trim data-noescape>
 private $alt_country_names = array (
@@ -59,27 +60,64 @@ private $alt_country_names = array (
     'merica',
   ),
 );
+</code></pre>
 
-public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
-  if (empty($value)) {
-    return;
-  }
+~Notes:
 
+* Array of matching strings
+
+
+### Normalize Country Name
+
+Match defined countries or try alternates
+
+<pre><code class="php" data-trim data-noescape>
+public function transform(...) {
   $existing_countries = CountryManager::getStandardList();
-  $value = ucwords(strtolower(trim($value)));
 
   foreach ($existing_countries as $country_key => $country){
     if ($country->render() == $value) {
       return $country_key;
     }
   }
-
-  foreach($this->alt_country_names as $country_key => $country_names) {
-    if (in_array(strtolower($value), array_map('strtolower', $country_names))) {
+  foreach($this->alt_country_names
+    as $country_key => $country_names) {
+    if (in_array($value, $country_names)) {
       return $country_key;
     }
   }
-  throw new MigrateException(sprintf('Failed to find ISO Country Code for field : %s. Value: %s', $field, $value));
-
 }
 </code></pre>
+
+~Notes:
+
+* Get list of existing countries from CountryManager class
+* Check against that list, then our alternate country names
+* Probably need to be careful about case-sensitivity, trimming whitespace, etc
+
+
+### Normalize Country Name
+
+Error-handling
+
+<pre><code class="php" data-trim data-noescape>
+public function transform(...) {
+  [...]
+
+  foreach($this->alt_country_names
+    as $country_key => $country_names) {
+    if (in_array($value, $country_names)) {
+      return $country_key;
+    }
+  }
+  throw new MigrateException(
+    sprintf(
+      'Failed to find ISO Country Code for field: %s. Value: %s',
+      $field, $value)
+    );
+}
+</code></pre>
+
+~Notes:
+
+* If we failed to match, be sure to throw exception

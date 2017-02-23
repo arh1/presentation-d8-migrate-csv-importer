@@ -9,4 +9,5 @@ ID,title,body,Referenced Entity Title
 
 ~Notes:
 
-*
+* Unlike migration process plugin example, here let's assume ref'd entity already exists
+* Ultimately in our dest, need a pointer to nid for referenced entity

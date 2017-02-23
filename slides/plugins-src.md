@@ -6,4 +6,4 @@
 
 ~Notes:
 
-* 
+* CSV class extends SourcePluginBase class
