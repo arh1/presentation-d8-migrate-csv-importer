@@ -23,6 +23,7 @@ destination:
 ~Notes:
 
 * All migration config can be tracked by core CM (or Features)
+* Config stored along w/ other site config (in randomly-named /public dir or per path in settings.php)
 * For simple migrations, you'll just need the config/yml and no custom code
 * Here's a simple migration of articles from a D6 to D8 site
 * Source is nodes from a D6 db (node_type is optional config)

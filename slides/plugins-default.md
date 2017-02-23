@@ -11,5 +11,6 @@
 * Source: e.g. d6_node; others?
 * Destination: e.g. entity:node; others?
 * Lots of default process plugins
-* callback process plugin: simple processing
-* Console to list plugins
+* callback process plugin: simple processing (any PHP function w/ source val as single arg)
+* Note "default" syntax is shorthand for "get"/default plugin
+* Console to list available plugins
