@@ -51,5 +51,9 @@ process:
 ~Notes:
 
 * Here's how our migration config looks for the importer
-* Main change here is our source plugin
-* This plugin does require add'l config
+* Main change = source plugin
+* This plugin does require add'l config: path, header_row_count, keys
+* keys = array of column names that uniquely identify rows in csv
+* header_row_count = number of non-data rows at the top of the csv
+* col names come from header row, or column_names config
+* other config: delimiter, enclosure, escape, fields (explicit field name overrides? @todo)
