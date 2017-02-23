@@ -3,17 +3,15 @@
 Multiple process plugins
 
 <pre><code data-trim data-noescape>
-[...]
 process:
   my_field:
     -
       plugin: substr
-      source: 'My Field Name'
+      source: 'My Field Title'
       start: 6
       length: 10
     -
       plugin: machine_name
-[...]
 </code></pre>
 
 ~Notes:
