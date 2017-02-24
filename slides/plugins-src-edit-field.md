@@ -1,6 +1,6 @@
 ### Alter Source Field
 
-modules/custom/my_module/src/Plugin/migrate/source/altered.php
+my_module/src/Plugin/migrate/source/altered.php
 
 <pre><code data-trim data-noescape>
 public function alterMyField($value) {

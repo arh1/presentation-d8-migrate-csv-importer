@@ -18,7 +18,7 @@ source:
 
 ### Add Source Field
 
-modules/custom/my_module/src/Plugin/migrate/source/altered.php
+my_module/src/Plugin/migrate/source/altered.php
 
 <pre><code data-trim data-noescape>
 namespace Drupal\my_module\Plugin\migrate\source;
@@ -35,7 +35,6 @@ use Drupal\Core\Database\Database;
  * )
  */
 class AlteredCSV extends CSV {
-...
 }
 </code></pre>
 
@@ -46,7 +45,7 @@ class AlteredCSV extends CSV {
 
 ### Add Source Field
 
-modules/custom/my_module/src/Plugin/migrate/source/altered.php
+Override initializeIterator method to add column
 
 <pre><code data-trim data-noescape>
 public function initializeIterator() {
@@ -71,7 +70,7 @@ public function initializeIterator() {
 
 ### Add Source Field
 
-modules/custom/my_module/src/Plugin/migrate/source/altered.php
+Set the value of the new field
 
 <pre><code data-trim data-noescape>
 public function prepareRow(Row $row) {

@@ -21,7 +21,7 @@ process:
 
 ### Normalize Country Name
 
-modules/custom/my_module/src/Plugin/migrate/process/normalize.php
+my_module/src/Plugin/migrate/process/normalize.php
 
 <pre><code class="php" data-trim data-noescape>
 namespace Drupal\my_module\Plugin\migrate\process;

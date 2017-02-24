@@ -21,7 +21,7 @@ process:
 
 ### Look up NID from Title String
 
-modules/custom/my_module/src/Plugin/migrate/process/lookup.php
+my_module/src/Plugin/migrate/process/lookup.php
 
 <pre><code class="php" data-trim data-noescape>
 namespace Drupal\my_module\Plugin\migrate\process;
