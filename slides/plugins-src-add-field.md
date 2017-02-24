@@ -41,6 +41,8 @@ class AlteredCSV extends CSV {
 ~Notes:
 
 * Extend CSV source plugin class
+* Annotation matches value for plugin key in config
+* Note filepath
 
 
 ### Add Source Field
@@ -92,3 +94,4 @@ public function prepareRow(Row $row) {
 * Trivial example: new field concatenates two other fields
 * Override prepareRow method from SourcePluginBase class (which CSV class extends)
 * Add source property and return parent's implementation
+* Can now use 'My Derived Field Name' elsewhere in migration config

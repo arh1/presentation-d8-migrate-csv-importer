@@ -1,8 +1,8 @@
 ### Structure Migrations
 
-* One migration per content type
-* Multiple passes over same CSV
+* One migration per destination
+* Multiple passes over same source
 
 ~Notes:
 
-* Each import involves multiple passes
+* CSV importer: Each import = multiple passes over csv

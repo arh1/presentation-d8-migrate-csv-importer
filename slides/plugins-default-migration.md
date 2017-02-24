@@ -10,7 +10,6 @@ process:
     source: 'My Field Title'
 </code></pre>
 
-
 ~Notes:
 
 * Maintain relationships across multiple migrations

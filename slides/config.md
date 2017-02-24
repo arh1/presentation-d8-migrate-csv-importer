@@ -22,12 +22,14 @@ destination:
 
 ~Notes:
 
-* All migration config can be tracked by core CM (or Features)
-* Config stored along w/ other site config (in randomly-named /public dir or per path in settings.php)
-* For simple migrations, you'll just need the config/yml and no custom code
-* Here's a simple migration of articles from a D6 to D8 site
+* All config can be tracked by core CM (or Features)
+* Config stored w/ other site config (randomly-named /public dir or per path in settings.php)
+* Simple migrations, you'll just need the config/yml and no custom PHP
+* Here's simple articles migration D6 -> D8
 * Source is nodes from a D6 db (node_type is optional config)
 * Destination is nodes on target D8 site
+* key-value pairs
+* process: key = dest field; value = source field/column
 
 
 ### Importer Config
@@ -45,7 +47,12 @@ source:
   header_row_count: 1
   keys:
     - ID
-process:
+  process:
+    title: title
+    body: body
+    type:
+      plugin: default_value
+      default_value: article
 [...]
 </code></pre>
 
