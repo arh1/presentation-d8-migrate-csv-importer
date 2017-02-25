@@ -46,7 +46,7 @@ class AlteredCSV extends CSV {
 
 ### Alter Source Field
 
-my_module/src/Plugin/migrate/source/Altered.php
+Alter the value of the existing field
 
 <pre><code data-trim data-noescape>
 private function alterMyField($value) {
