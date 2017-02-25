@@ -7,7 +7,11 @@
 
 ~Notes:
 
-* --update is like `track_changes: true` but former updates ALL rows, where latter just updates where hashes differ
+* record hash stored in map table
+* hash compared on every migrate run
+* --update updates all rows
+* `track_changes: true` updates where hashes differ
+* --force ignore dependencies
 
 
 ### Migration Import

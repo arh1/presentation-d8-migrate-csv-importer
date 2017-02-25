@@ -23,7 +23,7 @@ process:
 
 ### Look up NID from Title String
 
-my_module/src/Plugin/migrate/process/lookup.php
+my_module/src/Plugin/migrate/process/Lookup.php
 
 <pre><code class="php" data-trim data-noescape>
 namespace Drupal\my_module\Plugin\migrate\process;
@@ -46,7 +46,8 @@ class LookupTitle extends ProcessPluginBase {
 ~Notes:
 
 * id from annotation matches id in plugin configuration
-* CSV class for source plugin extends SourcePluginBase; here we extend ProcessPluginBase
+* here we extend ProcessPluginBase
+* (CSV class for source plugin extends SourcePluginBase)
 
 
 ### Look up NID from Title String
@@ -72,15 +73,14 @@ public function transform(
 
 ~Notes:
 
-* Process plugin class only needs one method: transform
-* $value = source field string value where we need nid; return altered version of this
+* Only need transform method
+* $value = source field string; return nid
+* Entity query service -> array of matching nids
+* We're hard-coding ref'd bundle
 * $destination_property = field we're importing into
-* Entity query service to get array of matching nids
-* We're cheating: hard-coding referenced bundle
-* Typically you'd want to abstract further (use one plugin regardless of ref'd bundle on destination)
-* Could do by inspecting properties of destination field, or passing in bundle as plugin config
-* Deeper dive: plugin would implement ContainerFactoryPluginInterface (allow to, among other things, pass in config)
-* migrate_plus has good example of this in entity_lookup example
+* Deeper dive: Typically abstract further (1 plugin regardless of ref'd bundle on destination)
+* Could: inspect properties of destination field; pass in bundle as plugin config
+* plugin would implement ContainerFactoryPluginInterface (allow to, among other things, pass in config)
 
 
 ### Look up NID from Title String

@@ -18,7 +18,7 @@ source:
 
 ### Add Source Field
 
-my_module/src/Plugin/migrate/source/altered.php
+my_module/src/Plugin/migrate/source/Altered.php
 
 <pre><code data-trim data-noescape>
 namespace Drupal\my_module\Plugin\migrate\source;

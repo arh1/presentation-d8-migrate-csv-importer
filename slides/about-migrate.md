@@ -9,3 +9,4 @@
 
 * 3 parts: source, process, destination
 * Importer: add new content from external source on regular basis
+* CSV: varied/open input from editors; lots of cleanup/normalization

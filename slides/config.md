@@ -6,7 +6,7 @@ config/migrate_plus.migration.my_migration.yml
 id: my_migration
 label: Migrate articles
 migration_groups:
-  - My migration group
+  - 'My migration group'
 source:
   plugin: d6_node
   node_type: article
@@ -22,12 +22,12 @@ destination:
 
 ~Notes:
 
-* All config can be tracked by core CM (or Features)
-* Config stored w/ other site config (randomly-named /public dir or per path in settings.php)
-* Simple migrations, you'll just need the config/yml and no custom PHP
-* Here's simple articles migration D6 -> D8
-* Source is nodes from a D6 db (node_type is optional config)
-* Destination is nodes on target D8 site
+* Tracked by core CM (or Features)
+* Stored w/ other site config (randomly-named /public dir or per path in settings.php)
+* Simple = just config/yml; no custom PHP
+* Here's simple D6 -> D8 migration
+* Source = nodes from D6 db (node_type optional)
+* Destination = nodes on target D8 site
 * key-value pairs
 * process: key = dest field; value = source field/column
 
@@ -40,7 +40,7 @@ config/migrate_plus.migration.my_importer.yml
 id: my_importer
 label: Import articles
 migration_groups:
-  - My migration group
+  - 'My migration group'
 source:
   plugin: csv
   path: '/path/to/my_articles.csv'
@@ -58,10 +58,10 @@ source:
 
 ~Notes:
 
-* Here's how our migration config looks for the importer
+* Here's importer config
 * Main change = source plugin
-* This plugin does require add'l config: path, header_row_count, keys
-* keys = array of column names that uniquely identify rows in csv
-* header_row_count = number of non-data rows at the top of the csv
-* col names come from header row, or column_names config
+* Plugin does req add'l config: path, header_row_count, keys
+* keys = array of col names uniquely identify CSV rows
+* header_row_count = num non-data rows at top of csv
+* col names: header row, or column_names config
 * other config: delimiter, enclosure, escape, fields (explicit field name overrides? @todo)

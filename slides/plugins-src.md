@@ -1,6 +1,6 @@
 ### Custom Source Plugin
 
-* my_module/src/Plugin/migrate/source/my_plugin.php
+* my_module/src/Plugin/migrate/source/MyPlugin.php
 * Extend CSV source plugin class
 * Plugin discoverability: annotation
 

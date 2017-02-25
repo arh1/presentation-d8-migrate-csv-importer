@@ -7,9 +7,9 @@
 
 ~Notes:
 
-* You only need to supply the config (yml)
-* Source: e.g. d6_node; others?
-* Destination: e.g. entity:node; others?
+* Only need to supply config/yml
+* Source: e.g. d6_node (not too many by def)
+* Destination: any entity type, config, url aliases
 * Lots of default process plugins
 * callback process plugin: simple processing (any PHP function w/ source val as single arg)
 * Note "default" syntax is shorthand for "get"/default plugin
