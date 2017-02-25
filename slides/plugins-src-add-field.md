@@ -1,23 +1,5 @@
 ### Add Source Field
 
-config/migrate_plus.migration.my_importer.yml
-
-<pre><code data-trim data-noescape>
-source:
-  plugin: my_altered_csv
-  path: '/path/to/my_articles.csv'
-  header_row_count: 1
-  keys:
-    - ID
-</code></pre>
-
-~Notes:
-
-* Changed source plugin
-
-
-### Add Source Field
-
 my_module/src/Plugin/migrate/source/Altered.php
 
 <pre><code data-trim data-noescape>
@@ -40,7 +22,7 @@ class AlteredCSV extends CSV {
 
 ~Notes:
 
-* Extend CSV source plugin class
+* Again, extend CSV source plugin class
 * Annotation matches value for plugin key in config
 
 

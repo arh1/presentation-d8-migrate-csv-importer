@@ -47,12 +47,12 @@ source:
   header_row_count: 1
   keys:
     - ID
-  process:
-    title: Title
-    body: Body
-    type:
-      plugin: default_value
-      default_value: article
+process:
+  title: Title
+  body: Body
+  type:
+    plugin: default_value
+    default_value: article
 [...]
 </code></pre>
 

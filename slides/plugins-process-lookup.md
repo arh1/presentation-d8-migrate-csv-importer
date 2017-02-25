@@ -97,8 +97,9 @@ public function transform(...) {
   else {
     throw new MigrateException(
       sprintf(
-        'Failed to lookup by Title, field name: %s.',
-        $destination_property
+        'Failed to find title for field: %s. Looked up: %s',
+        $this->configuration['source'], $value)
+
       )
     );
   }
@@ -109,3 +110,4 @@ public function transform(...) {
 
 * Let's add error-handling
 * MigrateException class writes exceptions to db
+* Note we can get source from migration's configuration property

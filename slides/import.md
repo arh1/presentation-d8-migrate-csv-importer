@@ -11,7 +11,7 @@
 * hash compared on every migrate run
 * --update updates all rows
 * `track_changes: true` updates where hashes differ
-* --force ignore dependencies
+* --force ignore migration_dependencies
 
 
 ### Migration Import

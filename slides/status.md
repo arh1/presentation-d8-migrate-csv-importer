@@ -6,7 +6,7 @@
 
 ~Notes:
 
-* UI = drush ms output w/ links to messages
+* Migrate Tools: GUI = drush ms output w/ links to messages
 
 
 ### Migration Status

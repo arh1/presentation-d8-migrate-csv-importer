@@ -16,7 +16,7 @@ process:
 
 ~Notes:
 
-* Note nested key for addressfield
+* Note nested key for address field
 * (our field name is 'my_address_field', 'country_code' is component/subfield)
 
 
@@ -44,9 +44,12 @@ class countryNormalization extends ProcessPluginBase {
 
 ~Notes:
 
-* Again, note id from annotation...
-* And extending ProcessPluginBase
 * Include CountryManager class
+* Again, note id in annotation...
+* And extending ProcessPluginBase
+---
+* abstract class ProcessPluginBase extends PluginBase implements MigrateProcessInterface
+* class countryNormalization extends ProcessPluginBase
 
 
 ### Normalize Country Name
@@ -122,6 +125,3 @@ public function transform(...) {
 ~Notes:
 
 * If we failed to match, be sure to throw exception
-* Note we can get source from migration's configuration property
-* abstract class ProcessPluginBase extends PluginBase implements MigrateProcessInterface
-* class countryNormalization extends ProcessPluginBase

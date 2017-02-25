@@ -2,14 +2,14 @@
 
 settings.php
 
-<pre><code class="php">
+<pre><code data-trim data-noescape>
 $config['my_importer']['source']['path']
   = '/path/to/my_articles.csv';
 </code></pre>
 
 Console
 
-<pre><code class="bash">
+<pre><code data-trim data-noescape>
 console config:override migrate_plus.migration.basics
   source.path /path/to/my_articles.csv
 </code></pre>
