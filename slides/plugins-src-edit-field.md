@@ -3,7 +3,7 @@
 my_module/src/Plugin/migrate/source/altered.php
 
 <pre><code data-trim data-noescape>
-public function alterMyField($value) {
+private function alterMyField($value) {
   $altered = str_replace('_', ' ', $value);
   return $altered;
 }

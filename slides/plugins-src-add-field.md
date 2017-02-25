@@ -13,7 +13,7 @@ source:
 
 ~Notes:
 
-* Manipulate source data: create our own source plugin
+* Changed source plugin
 
 
 ### Add Source Field
@@ -42,7 +42,6 @@ class AlteredCSV extends CSV {
 
 * Extend CSV source plugin class
 * Annotation matches value for plugin key in config
-* Note filepath
 
 
 ### Add Source Field
@@ -55,7 +54,7 @@ public function initializeIterator() {
 
   // Add column we will derive programmatically.
   $column_names[] =
-    ['My Derived Field Name' => 'My Derived Field Name'];
+    ['My Derived Field' => 'My Derived Field'];
 
   $file->setColumnNames($column_names);
 
@@ -68,6 +67,7 @@ public function initializeIterator() {
 
 * To add a field: override initializeIterator method from CSV plugin class
 * Add column to $column_names array
+* (Presumably could achieve same w/ column_names config)
 
 
 ### Add Source Field
@@ -77,11 +77,11 @@ Set the value of the new field
 <pre><code data-trim data-noescape>
 public function prepareRow(Row $row) {
   $pieces = [
-    $row->getSourceProperty('My First Field Name'),
-    $row->getSourceProperty('My Second Field Name')
+    $row->getSourceProperty('My First Field'),
+    $row->getSourceProperty('My Second Field')
   ];
   $row->setSourceProperty(
-    'My Derived Field Name',
+    'My Derived Field',
     implode('_', $pieces)
   );
 
@@ -94,4 +94,4 @@ public function prepareRow(Row $row) {
 * Trivial example: new field concatenates two other fields
 * Override prepareRow method from SourcePluginBase class (which CSV class extends)
 * Add source property and return parent's implementation
-* Can now use 'My Derived Field Name' elsewhere in migration config
+* Can now use 'My Derived Field' elsewhere in migration config

@@ -7,4 +7,5 @@
 
 ~Notes:
 
-*
+* Custom per-field transformations b/w source and dest
+* Note plugin's filepath

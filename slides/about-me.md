@@ -4,7 +4,7 @@
 
 ![Forum One](slides/img/ForumOne_RGB_Wordmark.png)
 
-<http://forumone.com>
+[forumone.com](https://forumone.com)
 
 ~Notes:
 

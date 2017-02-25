@@ -4,8 +4,8 @@ config/migrate_plus.migration.my_importer.yml
 
 <pre><code data-trim data-noescape>
 process:
-  title: title
-  body: body
+  title: Title
+  body: Body
   my_address_field/country_code:
     plugin: country_normalization
     source: 'Country Name'
@@ -16,7 +16,8 @@ process:
 
 ~Notes:
 
-* Note nested key for addressfield (our field name is 'my_address_field')
+* Note nested key for addressfield
+* (our field name is 'my_address_field', 'country_code' is component/subfield)
 
 
 ### Normalize Country Name
@@ -113,7 +114,7 @@ public function transform(...) {
   throw new MigrateException(
     sprintf(
       'Failed to find ISO Country Code for field: %s. Value: %s',
-      $field, $value)
+      $this->configuration['source'], $value)
     );
 }
 </code></pre>
@@ -121,3 +122,6 @@ public function transform(...) {
 ~Notes:
 
 * If we failed to match, be sure to throw exception
+* Note we can get source from migration's configuration property
+* abstract class ProcessPluginBase extends PluginBase implements MigrateProcessInterface
+* class countryNormalization extends ProcessPluginBase

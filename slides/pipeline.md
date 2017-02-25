@@ -1,6 +1,6 @@
 ### Pipeline
 
-Multiple process plugins
+Multiple, chained process plugins
 
 <pre><code data-trim data-noescape>
 process:
@@ -16,6 +16,8 @@ process:
 
 ~Notes:
 
-* Can chain multiple process plugins together in a pipeline
+* All fields pass through process pipeline
+* Can chain multiple process plugins together
+* Each plugin should do only one thing
 * Output of one plugin passed on as input to the next
 * Source key only needed on first plugin

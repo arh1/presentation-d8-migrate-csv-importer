@@ -11,8 +11,8 @@ source:
   plugin: d6_node
   node_type: article
 process:
-  title: title
-  body: body
+  title: Title
+  body: Body
   type:
     plugin: default_value
     default_value: article
@@ -48,8 +48,8 @@ source:
   keys:
     - ID
   process:
-    title: title
-    body: body
+    title: Title
+    body: Body
     type:
       plugin: default_value
       default_value: article

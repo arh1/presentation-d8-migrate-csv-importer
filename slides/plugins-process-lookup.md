@@ -4,8 +4,8 @@ config/migrate_plus.migration.my_importer.yml
 
 <pre><code data-trim data-noescape>
 process:
-  title: title
-  body: body
+  title: Title
+  body: Body
   my_entityref_field:
     plugin: lookup_title
     source: 'Referenced Entity Title'
@@ -16,7 +16,9 @@ process:
 
 ~Notes:
 
-* CSV often has string titles for referenced entities...
+* key = Dest field name
+* plugin key = new plugin (per annotation)
+* source = csv column
 
 
 ### Look up NID from Title String

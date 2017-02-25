@@ -6,4 +6,7 @@
 
 ~Notes:
 
+* Manipulate source data globally across migrations
 * CSV class extends SourcePluginBase class
+* We can in turn extend CSV class
+* Note plugin's filepath

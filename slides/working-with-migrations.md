@@ -2,6 +2,7 @@
 
 ~Notes:
 
+* No GUI for non-D2D migrations (could create, but not today)
 * Drush
 * Console after 0.9.6
 * I use 'console' alias
