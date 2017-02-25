@@ -9,7 +9,7 @@
 
 ### Migration Rollback
 
-After running both and rolling one back. Oops?
+After running both and rolling one back. SAD?
 
 <pre><code data-trim data-noescape>
 ahieb@ahieb-pc:~/develop/my_project$ drush @my_project.local ms
@@ -23,4 +23,4 @@ ahieb@ahieb-pc:~/develop/my_project$
 
 * Rollback removes all imported entities from all previous CSVs
 * by design...
-* rollback_action (prop on DestinationBase class; in db table) could help us here? 
+* rollback_action (prop on DestinationBase class; in db table) could help us here?
